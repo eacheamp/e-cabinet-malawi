@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <h2>Your Final Decision has been made!</h2>
+        <div class="image container">
+                <img src="{% static 'img/cropped-gavel-icon-18659.png' %}">
+        </div>
+        <h2>Please Go Back to Voting Session:</h2>
+        <a href="{% url 'chair_list' %}" class="btn btn-secondary btn-lg btn-block">Return to Chair Cabinet Room</a>
+
+{% endblock%}

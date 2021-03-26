@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <h2>Your Vote has been Cast!</h2>
+        <div class="image container">
+                <img src="{% static 'img/vote_confirm.png' %}">
+        </div>
+        <h2>Please Go Back to Voting Session:</h2>
+
+        <input type="button" value="Return to Cabinet Room" class="btn btn-secondary btn-lg btn-block" onclick="windowClose();">
+
+{% endblock%}

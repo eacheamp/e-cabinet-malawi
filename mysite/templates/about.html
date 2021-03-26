@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: Yantdamanav;
+                box-sizing: border-box;
+            }
+
+            i{
+                font-size: 35px;
+                padding-top:20px;
+                padding-right: 30px;
+                padding-left: 30px;
+                padding-bottom:20px;
+            }
+            .p .desc{
+                font-size: 20px;
+                padding-top:20px;
+                padding-right: 30px;
+                padding-left: 30px;
+                padding-bottom:20px;
+
+            }
+
+
+        </style>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstdapcdn.com/bootstdap/4.1.3/css/bootstdap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+        <link href="https://fonts.googleapis.com/css2?family=Yantdamanav:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/1324cdca01.js" crossorigin="anonymous"></script>
+        <title>e-Cab Index</title>
+    </head>
+
+        <div>
+        {% include 'navbar.html' %}
+
+        <div class="about_body">
+
+            <div class="about-section">
+                <div class="inner-container">
+                    <h1>About e-Cabinet Malawi</h1>
+                    <p class="text">
+                        e-Cabinet uses web-based software and audio-visual equipment,
+                        ministers can take part remotely, and have often done so.
+                        Decisions made at the meetings can be e-mailed to interested
+                        parties or posted on a website even while the meeting is still going on.
+                        The average length of the weekly cabinet meetings was cut from 4 or 5 hours to between 30 and 90 minutes.
+                    </p>
+                    <table class="about-table">
+                        <tr>
+                            <th class="color"><i class="fas fa-users"></i></th>
+                            <th class="color"><i class="fas fa-vote-yea"></i></th>
+                            <th class="color"><i class="fas fa-hourglass-half"></i></th>
+                            <th class="color"><i class="fas fa-file-signature"></i></th>
+                            <th class="color"><i class="fas fa-scroll"></i></th>
+
+                        </tr>
+                        <tr>
+                            <td class="td_class">Members enter meeting room</td>
+                            <td class="td_class">Members vote on motions one by one</td>
+                            <td class="td_class">They then tally the votes costing time</td>
+                            <td class="td_class">Or secret ballots require writing the votes on paper, which is tedious and wasteful</td>
+                            <td class="td_class">The final decision is rendered after much time and resources are expended</td>
+                        </tr>
+                    </table>
+                    <p class="text">
+                        The old way called for a count to determine Quorum, long discussions, edits, amendments,
+                        confusion, written ballots; leading to a waste of Cabinet Member time and resources.
+                        <strong>Why not use Technology to out advantage?</strong>
+                    </p>
+                        <h4><center>e-Cabinet Malawi is the Answer</center></h4>
+                      <p class="text">
+                        Top ministers’ time is precious. To ensure that ministers already have the view
+                        and understanding of agenda item, an application that is a multi-user database and
+                        scheduler has been developed. The system keeps relevant information updated to help
+                        minister organize in advance.
+                    </p>
+                     <table class="about-table">
+                         <tr>
+                            <th class="color"><i class="fas fa-users"></i></th>
+                            <th class="color"><i class="fas fa-server"></i></th>
+                            <th class="color"><i class="fas fa-tablet-alt"></i></th>
+                            <th class="color"><i class="fas fa-vote-yea"></i></th>
+                            <th class="color"><i class="fas fa-cloud"></i></th>
+                         </tr>
+                         <tr>
+                            <td class="td_class">Members enter meeting room or attend virtually</td>
+                            <td class="td_class">Users login to the secure e-Cabinet hosted the server</td>
+                            <td class="td_class">Using their mobile devices, members vote, append, and discuss motions</td>
+                            <td class="td_class">The votes and files are electronically collected</td>
+                            <td class="td_class">The meeting decisions are uploaded to the cloud, thus saving money and resources</td>
+                         </tr>
+                    </table>
+                    <br>
+                    <center><h1>
+                        By implementing an e-Cabinet system Malawi can save precious time and money.
+                    </h1></center>
+                    <center><i class="fas fa-money-bill-alt" style="font-size:60px"></i> <i class="far fa-clock"style="font-size:60px"></i></center>
+                    <br>
+                        <p>
+                    <a href="{% url 'home' %}" class="btn btn-primary">Back to Homepage</a>
+                        </p>
+                </i>
+            </div>
+            </div>
+        </div>
+
+</div>
+
+
+
+
+
+        </div>
+</html>

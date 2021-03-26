@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <style>
+            .row-margin-10 { margin-top: 1.0em; }
+        </style>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+        <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/1324cdca01.js" crossorigin="anonymous"></script>
+        <title>e-Cab Index</title>
+    </head>
+     {% include 'navbar.html' %}
+        <body class="landing">
+
+                <div class="my-home-col-pic">
+                    <img src ="{% static 'img/aditya-joshi-7FW5-3vVRSw-unsplash.jpg' %}" alt="cab_room" class="my-home-col-pic">
+                </div>
+
+                  <div class= "container land_banner">
+                      <div class="row row-margin-10">
+                          <div class="col-4">
+                              <center><i class="fas fa-chalkboard-teacher" style="font-size:60px;color:#1B4147"></i>
+                                  <br>
+                                  <br>
+                              <a href="{% url 'about' %}" class="btn btn-md" type="button">About</a>
+                                  <p>About the information system e-cabinet Malawi</p></center>
+                          </div>
+                          <div class="col-4">
+                              <center><i class="fas fa-person-booth" style="font-size:60px;color:#1B4147"></i>
+                                <br>
+                                  <br>
+                                <a href="{% url 'e-cabinet' %}" class="btn btn-md" type="button">Vote</a>
+                                  <p>Enter the e-Cabinet Room, review the motions on the docket for today's session and
+                                  cast your Vote</p></center>
+                          </div>
+                          <div class="col-4">
+                              <center><i class="fas fa-gavel" style="font-size:60px;color:#1B4147"></i>
+                                  <br>
+                                  <br>
+                                <a href="{% url 'cabinet_results' %}" class="btn btn-md" type="button">See Decisions</a>
+                                <p>Go to the virtual debriefing room to see the decisions rendered</p></center>
+                          </div>
+                      </div>
+                  </div>
+        </body>
+</html>

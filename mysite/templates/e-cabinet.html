@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+    {% for motion in page.object_list %}
+        <h3 class="display-4">{{ motion.title }}</h3>
+    {% endfor %}
+    <h5>Total Motions on Docket: {{ count }}</h5>
+    <h5>Page Number: {{ page.number }}</h5>
+
+    <hr class="my-4">
+        {% for motion in page.object_list %}
+            <p>Ministry: {{ motion.ministry}}</p>
+            <p><strong>Summary:  {{ motion.summary}}</strong></p>
+            <p class="lead">
+                 <a href="{{ motion.pdf.url }}" class="btn btn-success btn-lg" role="button" target="_blank">View Document</a>
+            </p>
+    <hr>
+            <p class="lead">
+                <center><i class="fas fa-vote-yea" style="font-size:90px;color:#1B4147"></i></center>
+                <center><a href="{% url 'vote_motion' motion.pk %}" class="btn btn-primary" target="_blank">Cast Vote</a></center>
+            </p>
+        {% endfor %}
+
+
+</div>
+
+
+<nav aria-label="Page navigation example">
+     <ul class="pagination justify-content-center">
+
+                {% if page.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'e-cabinet' %}?page={{ page.previous_page_number }}">Previous Motion</a>
+                    </li>
+                {% endif %}
+                {% if page.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'e-cabinet' %}?page={{ page.next_page_number }}">Next Motion</a>
+                    </li>
+                {% endif %}
+    </ul>
+</nav>
+                <br>
+            {% if not page.has_next %}
+                <p>*All the Motions have been reviewed and voted on. Please continue on to see the results from the e-cabinet meeting</p>
+                <p>
+                    <a href="{% url 'cabinet_results' %}" class="btn btn-secondary btn-lg btn-block">Next: See Preliminary Decisions</a>
+                </p>
+                <br>
+
+            {% endif %}
+  {% endblock %}

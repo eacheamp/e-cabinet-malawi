@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% block content_header %}
+        <h2>Session Results</h2>
+    {% endblock %}
+    <h3>Motions that Passed</h3>
+        <table class="table mb-0">
+        <thead>
+            <tr>
+                <th>Motion Title</th>
+                <th>Ministry</th>
+                <th>Date</th>
+                <th style= "text-align:right"> Cabinet Decision</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for motion in motions %}
+                 {% if motion.pass_crit is True  %}
+                    <tr>
+                        <td>{{ motion.title }}</td>
+                        <td>{{ motion.ministry }}</td>
+                        <td>{{ motion.date_created }}</td>
+                        <div class="align-right">
+                            <td class="align-right" style=" border-bottom: 1px solid #ddd">
+                                    <a href="{% url 'motion_pass' motion.pk %}" class="btn btn-info" target="_blank">See Decision</a>
+                            </td>
+                        </div>
+                         {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+<br>
+<h3>Motions that Failed to Pass</h3>
+ <table class="table mb-0">
+        <thead>
+            <tr>
+                <th>Motion Title</th>
+                <th>Ministry</th>
+                <th>Date</th>
+                <th style= "text-align:right"> Cabinet Decision</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for motion in motions %}
+                    {% if motion.pass_crit is not True %}
+                    <tr>
+                        <td>{{ motion.title }}</td>
+                        <td>{{ motion.ministry }}</td>
+                        <td>{{ motion.date_created }}</td>
+                        <div class="align-right">
+                            <td class="align-right" style=" border-bottom: 1px solid #ddd">
+                                    <a href="{% url 'motion_fail' motion.pk %}" class="btn btn-info" target="_blank">See Decision</a>
+                            </td>
+                        </div>
+                         {% endif %}
+                    {% endfor %}
+            </tbody>
+        </table>
+<br>
+<div class="btn-group btn-block">
+    <a href="{% url 'chair_list' %}" class="btn btn-secondary btn-lg btn-block">Next: Cabinet Leader Proceed to Make Final Decision</a>
+</div>
+{% endblock %}

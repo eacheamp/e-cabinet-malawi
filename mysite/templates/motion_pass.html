@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <style>
+            .row-margin-10 { margin-top: 1.0em; }
+        </style>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+        <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/1324cdca01.js" crossorigin="anonymous"></script>
+        <title>e-Cab Index</title>
+
+    </head>
+     <body>
+     {% include 'navbar.html' %}
+     <br>
+        <div class="row">
+              <div class="col">
+                  <div class="col-md">
+                      <div class="card text-center text-white bg-success">
+                          <div class="card-body">
+                            <h5 class="card-title"><strong>MOTION PASSES ON TO FINAL VOTE</strong></h5>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+        <br>
+        <div class="row">
+                  <div class="col">
+                      <div class="col-md">
+                          <div class="card text-center text-black bg-light mb-9">
+                               <div class="card-header">
+                                    <h5 class="card-title">MOTION TITLE:</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ object.title }}</h3>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+            <div class="col">
+                        <div class="col-md">
+                            <div class="card text-center text-black bg-light mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title">MINISTRY</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title"> {{ object.ministry }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+     <br>
+            <div class="row">
+                    <div class="col">
+                        <div class="col-md">
+                            <div class="card text-center text-white bg-info  mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title">VOTES FOR</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ object.Votes_Favor}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="col-md">
+                            <div class="card text-center text-white bg-danger mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title">VOTES AGAINST</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title"> {{ object.Votes_Against }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="col-md">
+                            <div class="card text-center text-white bg-warning mb-3">
+                                <div class="card-header">
+                                    <h5 class="card-title">ABSTENTIONS</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ object.Votes_Nodesc }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col">
+                        <div class="col-md">
+                            <button type= "onclick" class="btn btn-primary" onclick="window.close()";>Close Window</button>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </body>
+</html>

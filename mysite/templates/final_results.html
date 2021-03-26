@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% block content_header %}
+        <h2>Session Results</h2>
+    {% endblock %}
+        <table class="table mb-0">
+        <thead>
+            <tr>
+                <th>Motion Title</th>
+                <th>Ministry</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th style= "text-align:right"> Cabinet Chair Decision</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for motion in motions %}
+                    {% if motion.pass_crit is True  %}
+                    <tr>
+                        <td>{{ motion.title }}</td>
+                        <td>{{ motion.ministry }}</td>
+                        <td></td>
+                        <td></td>
+                       <td>
+                        <a href="{{ motion.pdf.url }}" class="btn btn-success" target="_blank">
+                            View Document
+                        </a>
+                        </td>
+                        <td><div class="align-right">
+                             <strong>{{motion.final_vote}}</strong>
+                        </div></td>
+                        {% endif %}
+                {% endfor %}
+
+            </tbody>
+        </table>
+    <br>
+     <br>
+    <span><a href="{% url 'home' %}" class="btn btn-secondary btn-lg btn-block">Publish/Email Cabinet Session Ruling</a></span>
+<br>
+    <span><a href="{% url 'home' %}" class="btn btn-info">Exit Cabinet</a></span>
+{% endblock %}

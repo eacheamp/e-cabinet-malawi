@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% block content_header %}
+        <h2>Final Agenda for Cabinet Chair</h2>
+    {% endblock %}
+    <table class="table mb-0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Motion Title</th>
+                <th>Ministry</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for motion in motions %}
+                <tr>
+                    {% if motion.pass_crit is True  %}
+                    <td>{{ motion.id }}</td>
+                    <td>{{ motion.title }}</td>
+                    <td>{{ motion.ministry }}</td>
+                    <div class="align-right">
+                       <td class="align-right" style=" border-bottom: 1px solid #ddd">
+                           <a href="{% url 'chair_desc' motion.pk %}" class="btn btn-info">Approve/Veto</a>
+                       </td>
+                    </div>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <br>
+     <br>
+    <span><a href="{% url 'final_ruling' %}" class="btn btn-secondary btn-lg btn-block">See Final Decision</a></span>
+{% endblock %}
